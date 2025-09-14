@@ -3,6 +3,7 @@ import Dashboard from '../components/Dashboard';
 import TransportMap from '../components/TransportMap';
 import Profile from '../components/Profile';
 import Navigation from '../components/Navigation';
+import Header from '../components/Header';
 import SearchBar from '../components/SearchBar';
 import { Card } from '../components/ui/card';
 import { Button } from '../components/ui/button';
@@ -117,8 +118,11 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      {renderContent()}
+    <div className="min-h-screen bg-background transition-colors">
+      <Header />
+      <main className="pt-16 pb-16">
+        {renderContent()}
+      </main>
       <Navigation activeTab={activeTab} onTabChange={setActiveTab} />
     </div>
   );
