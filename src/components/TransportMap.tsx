@@ -4,6 +4,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { Button } from './ui/button';
 import { MapPin, Navigation, Bus } from 'lucide-react';
 import { Card } from './ui/card';
+import { useLanguage } from '../contexts/LanguageContext';
 
 // Mock bus data for Meerut-Hapur region
 const mockBuses = [
@@ -50,6 +51,7 @@ interface TransportMapProps {
 }
 
 const TransportMap: React.FC<TransportMapProps> = ({ onBusSelected }) => {
+  const { t } = useLanguage();
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
   const [userLocation, setUserLocation] = useState<[number, number] | null>(null);
@@ -158,7 +160,7 @@ const TransportMap: React.FC<TransportMapProps> = ({ onBusSelected }) => {
           className="shadow-button"
         >
           <Navigation className="h-4 w-4 mr-2" />
-          My Location
+          {t('map.myLocation')}
         </Button>
       </div>
 
@@ -166,7 +168,7 @@ const TransportMap: React.FC<TransportMapProps> = ({ onBusSelected }) => {
       <Card className="absolute bottom-4 left-4 right-4 p-3">
         <div className="flex items-center gap-2 text-sm text-warning">
           <MapPin className="h-4 w-4" />
-          <span>Demo mode - Add your Mapbox token for full functionality</span>
+          <span>{t('map.demoMode')}</span>
         </div>
       </Card>
     </div>

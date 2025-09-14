@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
+import { useLanguage } from '../contexts/LanguageContext';
 import { 
   Home, 
   Search, 
@@ -16,12 +17,14 @@ interface NavigationProps {
 }
 
 const Navigation: React.FC<NavigationProps> = ({ activeTab, onTabChange }) => {
+  const { t } = useLanguage();
+  
   const tabs = [
-    { id: 'home', label: 'Home', icon: Home },
-    { id: 'nearby', label: 'Nearby', icon: NavigationIcon },
-    { id: 'routes', label: 'Routes', icon: Search },
-    { id: 'map', label: 'Map', icon: MapPin },
-    { id: 'profile', label: 'Profile', icon: User },
+    { id: 'home', label: t('nav.home'), icon: Home },
+    { id: 'nearby', label: t('nav.nearby'), icon: NavigationIcon },
+    { id: 'routes', label: t('nav.routes'), icon: Search },
+    { id: 'map', label: t('nav.map'), icon: MapPin },
+    { id: 'profile', label: t('nav.profile'), icon: User },
   ];
 
   return (
