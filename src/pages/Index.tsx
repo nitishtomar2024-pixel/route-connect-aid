@@ -78,15 +78,15 @@ const Index = () => {
                 <div className="space-y-2">
                   <Button variant="ghost" className="w-full justify-start">
                     <MapPin className="h-4 w-4 mr-3" />
-                    City Center ↔ Airport
+                    Meerut ↔ Hapur
                   </Button>
                   <Button variant="ghost" className="w-full justify-start">
                     <MapPin className="h-4 w-4 mr-3" />
-                    Metro Station ↔ Tech Park
+                    Garh Mukteshwar ↔ Meerut
                   </Button>
                   <Button variant="ghost" className="w-full justify-start">
                     <MapPin className="h-4 w-4 mr-3" />
-                    Hospital ↔ University
+                    Hapur ↔ Meerut Cantt
                   </Button>
                 </div>
               </Card>

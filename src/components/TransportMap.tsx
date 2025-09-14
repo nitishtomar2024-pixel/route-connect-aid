@@ -5,34 +5,43 @@ import { Button } from './ui/button';
 import { MapPin, Navigation, Bus } from 'lucide-react';
 import { Card } from './ui/card';
 
-// Mock bus data for demonstration
+// Mock bus data for Meerut-Hapur region
 const mockBuses = [
   {
     id: '1',
-    route: 'Route 42',
-    direction: 'City Center → Airport',
-    location: [77.2090, 28.6139], // New Delhi coordinates
+    route: 'Route 101',
+    direction: 'Meerut → Hapur',
+    location: [77.7064, 28.9845], // Meerut coordinates
     eta: '5 min',
     occupancy: 'Medium',
     type: 'regular'
   },
   {
     id: '2', 
-    route: 'Route 15',
-    direction: 'Metro Station → Mall',
-    location: [77.2195, 28.6129],
+    route: 'Route 205',
+    direction: 'Garh Mukteshwar → Meerut',
+    location: [77.8500, 28.9200], // Garh Mukteshwar area
     eta: '12 min',
     occupancy: 'Low',
     type: 'express'
   },
   {
     id: '3',
-    route: 'Route 8A',
-    direction: 'Hospital → University',
-    location: [77.2000, 28.6100],
+    route: 'Route 45A',
+    direction: 'Hapur → Meerut Cantt',
+    location: [77.7800, 28.7300], // Hapur coordinates
     eta: '8 min',
     occupancy: 'High',
     type: 'regular'
+  },
+  {
+    id: '4',
+    route: 'Route 302',
+    direction: 'Meerut City → Garh Mukteshwar',
+    location: [77.7200, 28.9600],
+    eta: '15 min',
+    occupancy: 'Medium',
+    type: 'express'
   }
 ];
 
@@ -54,7 +63,7 @@ const TransportMap: React.FC<TransportMapProps> = ({ onBusSelected }) => {
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v12',
-      center: [77.2090, 28.6139], // New Delhi center
+      center: [77.7064, 28.9845], // Meerut center
       zoom: 13,
       pitch: 0,
     });

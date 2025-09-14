@@ -15,31 +15,31 @@ import BusCard from './BusCard';
 import SearchBar from './SearchBar';
 import heroImage from '../assets/transport-hero.jpg';
 
-// Mock data for nearby buses
+// Mock data for nearby buses in Meerut-Hapur region
 const nearbyBuses = [
   {
     id: '1',
-    route: 'Route 42',
-    direction: 'City Center → Airport',
-    location: [77.2090, 28.6139] as [number, number],
+    route: 'Route 101',
+    direction: 'Meerut → Hapur',
+    location: [77.7064, 28.9845] as [number, number],
     eta: '3 min',
     occupancy: 'Medium' as const,
     type: 'regular' as const
   },
   {
     id: '2', 
-    route: 'Route 15X',
-    direction: 'Metro Station → Tech Park',
-    location: [77.2195, 28.6129] as [number, number],
+    route: 'Route 205X',
+    direction: 'Garh Mukteshwar → Meerut',
+    location: [77.8500, 28.9200] as [number, number],
     eta: '7 min',
     occupancy: 'Low' as const,
     type: 'express' as const
   },
   {
     id: '3',
-    route: 'Route 8A',
-    direction: 'Hospital → University',
-    location: [77.2000, 28.6100] as [number, number],
+    route: 'Route 45A',
+    direction: 'Hapur → Meerut Cantt',
+    location: [77.7800, 28.7300] as [number, number],
     eta: '12 min',
     occupancy: 'High' as const,
     type: 'regular' as const
@@ -165,15 +165,15 @@ const Dashboard: React.FC<DashboardProps> = ({ onOpenMap }) => {
           <h3 className="font-semibold mb-3 text-card-foreground">Service Status</h3>
           <div className="space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-sm">Route 42</span>
+              <span className="text-sm">Route 101</span>
               <Badge variant="success">On Time</Badge>
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-sm">Route 15X</span>
+              <span className="text-sm">Route 205X</span>
               <Badge variant="warning">5 min delay</Badge>
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-sm">Route 8A</span>
+              <span className="text-sm">Route 45A</span>
               <Badge variant="success">On Time</Badge>
             </div>
           </div>
