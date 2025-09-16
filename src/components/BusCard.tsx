@@ -3,6 +3,7 @@ import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { Bus, Clock, Users, Navigation, MapPin } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface BusData {
   id: string;
@@ -21,6 +22,7 @@ interface BusCardProps {
 }
 
 const BusCard: React.FC<BusCardProps> = ({ bus, onTrack, onViewRoute }) => {
+  const { t } = useLanguage();
   const getOccupancyColor = (occupancy: string) => {
     switch (occupancy) {
       case 'Low': return 'success';
@@ -51,7 +53,7 @@ const BusCard: React.FC<BusCardProps> = ({ bus, onTrack, onViewRoute }) => {
             <div className="flex items-center gap-2 mb-1">
               <h3 className="font-semibold text-card-foreground">{bus.route}</h3>
               <Badge variant={bus.type === 'express' ? 'secondary' : 'outline'}>
-                {bus.type === 'express' ? 'Express' : 'Regular'}
+                {bus.type === 'express' ? t('common.express') : t('common.regular')}
               </Badge>
             </div>
             
@@ -69,7 +71,7 @@ const BusCard: React.FC<BusCardProps> = ({ bus, onTrack, onViewRoute }) => {
               <div className="flex items-center gap-1">
                 <Users className="h-3 w-3 text-muted-foreground" />
                 <Badge variant={getOccupancyColor(bus.occupancy)} size="sm">
-                  {bus.occupancy}
+                  {t(`bus.occupancy.${bus.occupancy.toLowerCase()}`)}
                 </Badge>
               </div>
             </div>
@@ -78,24 +80,24 @@ const BusCard: React.FC<BusCardProps> = ({ bus, onTrack, onViewRoute }) => {
         
         {/* Action Buttons */}
         <div className="flex flex-col gap-2 ml-2">
-          <Button
-            variant="transport"
-            size="sm"
-            onClick={() => onTrack?.(bus)}
-            className="whitespace-nowrap"
-          >
-            <Navigation className="h-3 w-3 mr-1" />
-            Track
-          </Button>
-          
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => onViewRoute?.(bus)}
-            className="whitespace-nowrap"
-          >
-            Route
-          </Button>
+            <Button
+              variant="transport"
+              size="sm"
+              onClick={() => onTrack?.(bus)}
+              className="whitespace-nowrap"
+            >
+              <Navigation className="h-3 w-3 mr-1" />
+              {t('bus.track')}
+            </Button>
+            
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => onViewRoute?.(bus)}
+              className="whitespace-nowrap"
+            >
+              Route
+            </Button>
         </div>
       </div>
     </Card>

@@ -81,7 +81,37 @@ const translations = {
     'language.select': 'Language',
     'language.english': 'English',
     'language.hindi': 'हिन्दी',
-    'language.urdu': 'اردو'
+    'language.urdu': 'اردو',
+    
+    // Common
+    'common.hello': 'Hello',
+    'common.user': 'User',
+    'common.findYourNextRide': 'Find your next ride',
+    'common.currentLocation': 'Current Location',
+    'common.liveTracking': 'Live Tracking',
+    'common.totalTrips': 'Total Trips',
+    'common.rating': 'Rating',
+    'common.memberSince': 'Member Since',
+    'common.thisMonth': 'This Month',
+    'common.trips': 'trips',
+    'common.completed': 'completed',
+    'common.express': 'Express',
+    'common.regular': 'Regular',
+    'common.from': 'From (Your location)',
+    'common.to': 'To (Destination)',
+    'common.findRoutes': 'Find Routes',
+    
+    // Profile specific
+    'profile.quickStats': 'Quick Stats',
+    'profile.favoriteRoute': 'Favorite Route',
+    'profile.account': 'Account',
+    'profile.settingsPreferences': 'Settings & Preferences',
+    'profile.paymentMethods': 'Payment Methods',
+    'profile.recentTrips': 'Recent Trips',
+    'profile.frequentDestinations': 'Frequent Destinations',
+    'profile.support': 'Support',
+    'profile.callSupport': 'Call Support: 1800-123-4567',
+    'profile.emailSupport': 'Email: support@transport.app'
   },
   
   hi: {
@@ -156,7 +186,37 @@ const translations = {
     'language.select': 'भाषा',
     'language.english': 'English',
     'language.hindi': 'हिन्दी',
-    'language.urdu': 'اردو'
+    'language.urdu': 'اردو',
+    
+    // Common
+    'common.hello': 'नमस्ते',
+    'common.user': 'उपयोगकर्ता',
+    'common.findYourNextRide': 'अपनी अगली सवारी खोजें',
+    'common.currentLocation': 'वर्तमान स्थान',
+    'common.liveTracking': 'लाइव ट्रैकिंग',
+    'common.totalTrips': 'कुल यात्राएं',
+    'common.rating': 'रेटिंग',
+    'common.memberSince': 'सदस्य बने',
+    'common.thisMonth': 'इस महीने',
+    'common.trips': 'यात्राएं',
+    'common.completed': 'पूर्ण',
+    'common.express': 'एक्सप्रेस',
+    'common.regular': 'नियमित',
+    'common.from': 'से (आपका स्थान)',
+    'common.to': 'तक (गंतव्य)',
+    'common.findRoutes': 'रूट खोजें',
+    
+    // Profile specific
+    'profile.quickStats': 'त्वरित आंकड़े',
+    'profile.favoriteRoute': 'पसंदीदा रूट',
+    'profile.account': 'खाता',
+    'profile.settingsPreferences': 'सेटिंग्स और प्राथमिकताएं',
+    'profile.paymentMethods': 'भुगतान के तरीके',
+    'profile.recentTrips': 'हाल की यात्राएं',
+    'profile.frequentDestinations': 'बार-बार जाने वाले स्थान',
+    'profile.support': 'सहायता',
+    'profile.callSupport': 'सहायता कॉल करें: 1800-123-4567',
+    'profile.emailSupport': 'ईमेल: support@transport.app'
   },
   
   ur: {
@@ -231,7 +291,37 @@ const translations = {
     'language.select': 'زبان',
     'language.english': 'English',
     'language.hindi': 'हिन्दी',
-    'language.urdu': 'اردو'
+    'language.urdu': 'اردو',
+    
+    // Common
+    'common.hello': 'السلام علیکم',
+    'common.user': 'صارف',
+    'common.findYourNextRide': 'اپنا اگلا سفر تلاش کریں',
+    'common.currentLocation': 'موجودہ مقام',
+    'common.liveTracking': 'لائیو ٹریکنگ',
+    'common.totalTrips': 'کل سفر',
+    'common.rating': 'ریٹنگ',
+    'common.memberSince': 'ممبر بنے',
+    'common.thisMonth': 'اس مہینے',
+    'common.trips': 'سفر',
+    'common.completed': 'مکمل',
+    'common.express': 'ایکسپریس',
+    'common.regular': 'باقاعدہ',
+    'common.from': 'سے (آپ کا مقام)',
+    'common.to': 'تک (منزل)',
+    'common.findRoutes': 'راستے تلاش کریں',
+    
+    // Profile specific
+    'profile.quickStats': 'فوری اعداد و شمار',
+    'profile.favoriteRoute': 'پسندیدہ راستہ',
+    'profile.account': 'اکاؤنٹ',
+    'profile.settingsPreferences': 'سیٹنگز اور ترجیحات',
+    'profile.paymentMethods': 'ادائیگی کے طریقے',
+    'profile.recentTrips': 'حالیہ سفر',
+    'profile.frequentDestinations': 'بار بار جانے والے مقامات',
+    'profile.support': 'سپورٹ',
+    'profile.callSupport': 'سپورٹ کال کریں: 1800-123-4567',
+    'profile.emailSupport': 'ای میل: support@transport.app'
   }
 };
 

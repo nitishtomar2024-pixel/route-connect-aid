@@ -3,6 +3,7 @@ import { Input } from './ui/input';
 import { Button } from './ui/button';
 import { Search, MapPin, Navigation, ArrowUpDown } from 'lucide-react';
 import { Card } from './ui/card';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface SearchBarProps {
   onSearch?: (from: string, to: string) => void;
@@ -10,6 +11,7 @@ interface SearchBarProps {
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch, className = '' }) => {
+  const { t } = useLanguage();
   const [fromLocation, setFromLocation] = useState('');
   const [toLocation, setToLocation] = useState('');
   const [suggestions] = useState([
@@ -50,7 +52,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch, className = '' }) => {
             <div className="w-3 h-3 rounded-full bg-accent"></div>
           </div>
           <Input
-            placeholder="From (Your location)"
+            placeholder={t('common.from')}
             value={fromLocation}
             onChange={(e) => setFromLocation(e.target.value)}
             onKeyPress={handleKeyPress}
@@ -82,7 +84,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch, className = '' }) => {
             <MapPin className="w-4 h-4 text-danger" />
           </div>
           <Input
-            placeholder="To (Destination)"
+            placeholder={t('common.to')}
             value={toLocation}
             onChange={(e) => setToLocation(e.target.value)}
             onKeyPress={handleKeyPress}
@@ -104,7 +106,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch, className = '' }) => {
           disabled={!fromLocation.trim() || !toLocation.trim()}
         >
           <Search className="h-4 w-4 mr-2" />
-          Find Routes
+          {t('common.findRoutes')}
         </Button>
       </div>
     </Card>

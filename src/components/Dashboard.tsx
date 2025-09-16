@@ -14,6 +14,7 @@ import {
 import BusCard from './BusCard';
 import SearchBar from './SearchBar';
 import heroImage from '../assets/transport-hero.jpg';
+import { useLanguage } from '../contexts/LanguageContext';
 
 // Mock data for nearby buses in Meerut-Hapur region
 const nearbyBuses = [
@@ -51,6 +52,7 @@ interface DashboardProps {
 }
 
 const Dashboard: React.FC<DashboardProps> = ({ onOpenMap }) => {
+  const { t } = useLanguage();
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [userName] = useState('User'); // In real app, get from auth
 
@@ -87,8 +89,8 @@ const Dashboard: React.FC<DashboardProps> = ({ onOpenMap }) => {
         <div className="relative p-6 h-full flex flex-col justify-between text-white">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-bold">Hello, {userName}</h1>
-              <p className="text-white/90 text-sm">Find your next ride</p>
+              <h1 className="text-2xl font-bold">{t('common.hello')}, {userName}</h1>
+              <p className="text-white/90 text-sm">{t('common.findYourNextRide')}</p>
             </div>
             <div className="flex gap-2">
               <Button variant="ghost" size="icon" className="text-white hover:bg-white/20">
@@ -103,10 +105,10 @@ const Dashboard: React.FC<DashboardProps> = ({ onOpenMap }) => {
           <div className="flex items-center gap-4 text-sm">
             <div className="flex items-center gap-1">
               <MapPin className="h-4 w-4" />
-              <span>Current Location</span>
+              <span>{t('common.currentLocation')}</span>
             </div>
             <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
-              Live Tracking
+              {t('common.liveTracking')}
             </Badge>
           </div>
         </div>
@@ -121,7 +123,7 @@ const Dashboard: React.FC<DashboardProps> = ({ onOpenMap }) => {
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xl font-semibold text-foreground flex items-center gap-2">
               <Bus className="h-5 w-5 text-primary" />
-              Buses Near You
+              {t('dashboard.nearbyBuses')}
             </h2>
             <Button
               variant="ghost"
@@ -147,34 +149,34 @@ const Dashboard: React.FC<DashboardProps> = ({ onOpenMap }) => {
 
         {/* Quick Actions */}
         <Card className="p-4">
-          <h3 className="font-semibold mb-3 text-card-foreground">Quick Actions</h3>
+          <h3 className="font-semibold mb-3 text-card-foreground">{t('dashboard.quickActions')}</h3>
           <div className="grid grid-cols-2 gap-3">
             <Button variant="outline" onClick={onOpenMap} className="h-12 text-accessible">
               <MapPin className="h-4 w-4 mr-2" />
-              View Map
+              {t('dashboard.viewMap')}
             </Button>
             <Button variant="outline" className="h-12 text-accessible">
               <Clock className="h-4 w-4 mr-2" />
-              Trip History
+              {t('dashboard.tripHistory')}
             </Button>
           </div>
         </Card>
 
         {/* Service Status */}
         <Card className="p-4">
-          <h3 className="font-semibold mb-3 text-card-foreground">Service Status</h3>
+          <h3 className="font-semibold mb-3 text-card-foreground">{t('dashboard.serviceStatus')}</h3>
           <div className="space-y-2">
             <div className="flex items-center justify-between">
               <span className="text-sm">Route 101</span>
-              <Badge variant="success">On Time</Badge>
+              <Badge variant="success">{t('bus.onTime')}</Badge>
             </div>
             <div className="flex items-center justify-between">
               <span className="text-sm">Route 205X</span>
-              <Badge variant="warning">5 min delay</Badge>
+              <Badge variant="warning">5 {t('bus.delayed')}</Badge>
             </div>
             <div className="flex items-center justify-between">
               <span className="text-sm">Route 45A</span>
-              <Badge variant="success">On Time</Badge>
+              <Badge variant="success">{t('bus.onTime')}</Badge>
             </div>
           </div>
         </Card>

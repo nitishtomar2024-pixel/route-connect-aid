@@ -14,12 +14,14 @@ import {
   Phone,
   Mail
 } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface ProfileProps {
   onClose?: () => void;
 }
 
 const Profile: React.FC<ProfileProps> = ({ onClose }) => {
+  const { t } = useLanguage();
   const userData = {
     name: 'John Doe',
     phone: '+91 98765 43210',
@@ -78,18 +80,18 @@ const Profile: React.FC<ProfileProps> = ({ onClose }) => {
         <div className="mt-4 flex gap-4 text-sm">
           <div className="text-center">
             <div className="font-bold text-lg">{userData.totalTrips}</div>
-            <div className="text-white/80">Total Trips</div>
+            <div className="text-white/80">{t('common.totalTrips')}</div>
           </div>
           <div className="text-center">
             <div className="font-bold text-lg">4.8</div>
             <div className="text-white/80 flex items-center gap-1">
               <Star className="h-3 w-3 fill-current" />
-              Rating
+              {t('common.rating')}
             </div>
           </div>
           <div className="text-center">
             <div className="font-bold text-lg">{userData.joinDate}</div>
-            <div className="text-white/80">Member Since</div>
+            <div className="text-white/80">{t('common.memberSince')}</div>
           </div>
         </div>
       </div>
@@ -97,54 +99,54 @@ const Profile: React.FC<ProfileProps> = ({ onClose }) => {
       <div className="p-4 space-y-6">
         {/* Quick Stats */}
         <Card className="p-4">
-          <h2 className="font-semibold mb-3 text-card-foreground">Quick Stats</h2>
+          <h2 className="font-semibold mb-3 text-card-foreground">{t('profile.quickStats')}</h2>
           <div className="grid grid-cols-2 gap-4">
             <div className="text-center p-3 bg-muted rounded-lg">
               <MapPin className="h-5 w-5 text-primary mx-auto mb-1" />
-              <div className="text-sm font-medium">Favorite Route</div>
+              <div className="text-sm font-medium">{t('profile.favoriteRoute')}</div>
               <div className="text-xs text-muted-foreground">{userData.favoriteRoute}</div>
             </div>
             <div className="text-center p-3 bg-muted rounded-lg">
               <Clock className="h-5 w-5 text-primary mx-auto mb-1" />
-              <div className="text-sm font-medium">This Month</div>
-              <div className="text-xs text-muted-foreground">12 trips</div>
+              <div className="text-sm font-medium">{t('common.thisMonth')}</div>
+              <div className="text-xs text-muted-foreground">12 {t('common.trips')}</div>
             </div>
           </div>
         </Card>
 
         {/* Account Actions */}
         <Card className="p-4">
-          <h2 className="font-semibold mb-3 text-card-foreground">Account</h2>
+          <h2 className="font-semibold mb-3 text-card-foreground">{t('profile.account')}</h2>
           <div className="space-y-2">
             <Button variant="ghost" className="w-full justify-start h-12">
               <Settings className="h-4 w-4 mr-3" />
-              Settings & Preferences
+              {t('profile.settingsPreferences')}
             </Button>
             <Button variant="ghost" className="w-full justify-start h-12">
               <Bell className="h-4 w-4 mr-3" />
-              Notifications
+              {t('profile.notifications')}
             </Button>
             <Button variant="ghost" className="w-full justify-start h-12">
               <CreditCard className="h-4 w-4 mr-3" />
-              Payment Methods
+              {t('profile.paymentMethods')}
             </Button>
             <Button variant="ghost" className="w-full justify-start h-12">
               <History className="h-4 w-4 mr-3" />
-              Trip History
+              {t('profile.travelHistory')}
             </Button>
           </div>
         </Card>
 
         {/* Recent Trips */}
         <Card className="p-4">
-          <h2 className="font-semibold mb-3 text-card-foreground">Recent Trips</h2>
+          <h2 className="font-semibold mb-3 text-card-foreground">{t('profile.recentTrips')}</h2>
           <div className="space-y-3">
             {recentTrips.map((trip) => (
               <div key={trip.id} className="flex items-center justify-between p-3 bg-muted rounded-lg">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
                     <Badge variant="secondary" size="sm">{trip.route}</Badge>
-                    <Badge variant="success" size="sm">{trip.status}</Badge>
+                    <Badge variant="success" size="sm">{t('common.completed')}</Badge>
                   </div>
                   <div className="text-sm text-muted-foreground">
                     {trip.from} → {trip.to}
@@ -160,7 +162,7 @@ const Profile: React.FC<ProfileProps> = ({ onClose }) => {
 
         {/* Frequent Destinations */}
         <Card className="p-4">
-          <h2 className="font-semibold mb-3 text-card-foreground">Frequent Destinations</h2>
+          <h2 className="font-semibold mb-3 text-card-foreground">{t('profile.frequentDestinations')}</h2>
           <div className="flex flex-wrap gap-2">
             {userData.frequentDestinations.map((destination, index) => (
               <Badge key={index} variant="outline" className="px-3 py-1">
@@ -173,15 +175,15 @@ const Profile: React.FC<ProfileProps> = ({ onClose }) => {
 
         {/* Contact Support */}
         <Card className="p-4">
-          <h2 className="font-semibold mb-3 text-card-foreground">Support</h2>
+          <h2 className="font-semibold mb-3 text-card-foreground">{t('profile.support')}</h2>
           <div className="space-y-2">
             <Button variant="outline" className="w-full justify-start h-12">
               <Phone className="h-4 w-4 mr-3" />
-              Call Support: 1800-123-4567
+              {t('profile.callSupport')}
             </Button>
             <Button variant="outline" className="w-full justify-start h-12">
               <Mail className="h-4 w-4 mr-3" />
-              Email: support@transport.app
+              {t('profile.emailSupport')}
             </Button>
           </div>
         </Card>
