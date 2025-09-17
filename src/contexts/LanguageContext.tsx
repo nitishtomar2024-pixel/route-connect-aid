@@ -100,6 +100,11 @@ const translations = {
     'common.from': 'From (Your location)',
     'common.to': 'To (Destination)',
     'common.findRoutes': 'Find Routes',
+    'common.searching': 'Searching...',
+    'common.noResults': 'No routes found',
+    'common.speakFrom': 'Please speak your starting location',
+    'common.speakTo': 'Please speak your destination',
+    'common.bus': 'Bus',
     
     // Profile specific
     'profile.quickStats': 'Quick Stats',
@@ -111,7 +116,16 @@ const translations = {
     'profile.frequentDestinations': 'Frequent Destinations',
     'profile.support': 'Support',
     'profile.callSupport': 'Call Support: 1800-123-4567',
-    'profile.emailSupport': 'Email: support@transport.app'
+    'profile.emailSupport': 'Email: support@transport.app',
+    
+    // Bus Card
+    'busCard.from': 'from',
+    'busCard.to': 'to',
+    'busCard.departure': 'Departure',
+    'busCard.arrival': 'Arrival',
+    'busCard.duration': 'Duration',
+    'busCard.price': 'Price',
+    'busCard.selectBus': 'Select Bus'
   },
   
   hi: {
@@ -205,6 +219,11 @@ const translations = {
     'common.from': 'से (आपका स्थान)',
     'common.to': 'तक (गंतव्य)',
     'common.findRoutes': 'रूट खोजें',
+    'common.searching': 'खोज रहे हैं...',
+    'common.noResults': 'कोई रूट नहीं मिला',
+    'common.speakFrom': 'कृपया अपना शुरुआती स्थान बोलें',
+    'common.speakTo': 'कृपया अपना गंतव्य बोलें',
+    'common.bus': 'बस',
     
     // Profile specific
     'profile.quickStats': 'त्वरित आंकड़े',
@@ -216,7 +235,16 @@ const translations = {
     'profile.frequentDestinations': 'बार-बार जाने वाले स्थान',
     'profile.support': 'सहायता',
     'profile.callSupport': 'सहायता कॉल करें: 1800-123-4567',
-    'profile.emailSupport': 'ईमेल: support@transport.app'
+    'profile.emailSupport': 'ईमेल: support@transport.app',
+    
+    // Bus Card
+    'busCard.from': 'से',
+    'busCard.to': 'तक',
+    'busCard.departure': 'प्रस्थान',
+    'busCard.arrival': 'पहुंचना',
+    'busCard.duration': 'अवधि',
+    'busCard.price': 'कीमत',
+    'busCard.selectBus': 'बस चुनें'
   },
   
   ur: {
@@ -310,6 +338,11 @@ const translations = {
     'common.from': 'سے (آپ کا مقام)',
     'common.to': 'تک (منزل)',
     'common.findRoutes': 'راستے تلاش کریں',
+    'common.searching': 'تلاش کر رہے ہیں...',
+    'common.noResults': 'کوئی راستہ نہیں ملا',
+    'common.speakFrom': 'براہ کرم اپنا ابتدائی مقام بولیں',
+    'common.speakTo': 'براہ کرم اپنی منزل بولیں',
+    'common.bus': 'بس',
     
     // Profile specific
     'profile.quickStats': 'فوری اعداد و شمار',
@@ -321,7 +354,16 @@ const translations = {
     'profile.frequentDestinations': 'بار بار جانے والے مقامات',
     'profile.support': 'سپورٹ',
     'profile.callSupport': 'سپورٹ کال کریں: 1800-123-4567',
-    'profile.emailSupport': 'ای میل: support@transport.app'
+    'profile.emailSupport': 'ای میل: support@transport.app',
+    
+    // Bus Card
+    'busCard.from': 'سے',
+    'busCard.to': 'تک',
+    'busCard.departure': 'روانگی',
+    'busCard.arrival': 'آمد',
+    'busCard.duration': 'مدت',
+    'busCard.price': 'قیمت',
+    'busCard.selectBus': 'بس منتخب کریں'
   }
 };
 

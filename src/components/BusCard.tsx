@@ -2,8 +2,9 @@ import React from 'react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
-import { Bus, Clock, Users, Navigation, MapPin } from 'lucide-react';
+import { Bus, Clock, Users, Navigation, MapPin, Volume2 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useVoice } from '../hooks/useVoice';
 
 interface BusData {
   id: string;
@@ -23,6 +24,12 @@ interface BusCardProps {
 
 const BusCard: React.FC<BusCardProps> = ({ bus, onTrack, onViewRoute }) => {
   const { t } = useLanguage();
+  const { speak } = useVoice();
+
+  const handleSpeak = () => {
+    const busInfo = `${t('common.bus')} ${bus.route}, ${bus.direction}, ${t('bus.eta')}: ${bus.eta}, ${t('nearby.occupancy')}: ${t(`bus.occupancy.${bus.occupancy.toLowerCase()}`)}`;
+    speak(busInfo);
+  };
   const getOccupancyColor = (occupancy: string) => {
     switch (occupancy) {
       case 'Low': return 'success';
@@ -90,14 +97,25 @@ const BusCard: React.FC<BusCardProps> = ({ bus, onTrack, onViewRoute }) => {
               {t('bus.track')}
             </Button>
             
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => onViewRoute?.(bus)}
-              className="whitespace-nowrap"
-            >
-              Route
-            </Button>
+            <div className="flex gap-1">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => onViewRoute?.(bus)}
+                className="whitespace-nowrap flex-1"
+              >
+                Route
+              </Button>
+              
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={handleSpeak}
+                className="w-8 h-8 p-0"
+              >
+                <Volume2 className="h-3 w-3" />
+              </Button>
+            </div>
         </div>
       </div>
     </Card>
