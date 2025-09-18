@@ -11,8 +11,36 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 const translations = {
   en: {
     // Header
-    'app.name': 'Transport',
+    'app.name': 'Grameen Yatra',
     'header.live': 'Live',
+    
+    // App branding
+    'app.tagline': 'Easy Public Transport',
+    'app.description': 'Smart transport solutions for rural connectivity',
+    'app.coverAlt': 'Public transport buses on rural roads',
+
+    // Splash screen
+    'splash.getStarted': 'Get Started',
+    'splash.voiceGuide': 'Voice Guide',
+    'splash.accessibilityNote': 'Designed for rural accessibility with voice support and simple navigation',
+
+    // Map interface  
+    'map.yourLocation': 'Your Location',
+    'map.bus': 'Bus',
+    'map.eta': 'ETA',
+    'map.occupancy': 'Occupancy',
+    'map.express': 'Express',
+    'map.regular': 'Regular',
+    'map.distance': 'Distance',
+    'map.routes': 'Routes',
+    'map.all': 'All',
+    'map.buses': 'Buses',
+    'map.stops': 'Stops',
+    'map.myLocation': 'My Location',
+    'map.refresh': 'Refresh',
+    'map.full': 'Full',
+    'map.offlineMode': 'Offline Mode - Showing cached data',
+    'map.demoNotice': 'Demo Mode - Connect Mapbox API for live data',
     
     // Navigation
     'nav.home': 'Home',
@@ -40,7 +68,6 @@ const translations = {
     // Map
     'map.title': 'Live Map',
     'map.subtitle': 'Track buses in real-time',
-    'map.myLocation': 'My Location',
     'map.demoMode': 'Demo mode - Add your Mapbox token for full functionality',
     
     // Nearby
@@ -48,7 +75,6 @@ const translations = {
     'nearby.subtitle': 'Real-time location of nearby buses',
     'nearby.selectedBus': 'Selected Bus',
     'nearby.arrivesIn': 'Arrives in',
-    'nearby.occupancy': 'occupancy',
     'nearby.trackBus': 'Track This Bus',
     
     // Profile
@@ -130,8 +156,36 @@ const translations = {
   
   hi: {
     // Header
-    'app.name': 'परिवहन',
+    'app.name': 'ग्रामीण यात्रा',
     'header.live': 'लाइव',
+    
+    // App branding
+    'app.tagline': 'आसान सार्वजनिक परिवहन',
+    'app.description': 'ग्रामीण कनेक्टिविटी के लिए स्मार्ट परिवहन समाधान',
+    'app.coverAlt': 'ग्रामीण सड़कों पर सार्वजनिक परिवहन बसें',
+
+    // Splash screen
+    'splash.getStarted': 'शुरू करें',
+    'splash.voiceGuide': 'आवाज गाइड',
+    'splash.accessibilityNote': 'आवाज सहायता और सरल नेवीगेशन के साथ ग्रामीण पहुंच के लिए डिज़ाइन किया गया',
+
+    // Map interface
+    'map.yourLocation': 'आपका स्थान',
+    'map.bus': 'बस',
+    'map.eta': 'पहुंचने का समय',
+    'map.occupancy': 'भरावट',
+    'map.express': 'एक्सप्रेस',
+    'map.regular': 'नियमित',
+    'map.distance': 'दूरी',
+    'map.routes': 'मार्ग',
+    'map.all': 'सभी',
+    'map.buses': 'बसें',
+    'map.stops': 'स्टॉप',
+    'map.myLocation': 'मेरा स्थान',
+    'map.refresh': 'रीफ्रेश',
+    'map.full': 'भरी',
+    'map.offlineMode': 'ऑफलाइन मोड - कैश्ड डेटा दिखा रहे हैं',
+    'map.demoNotice': 'डेमो मोड - लाइव डेटा के लिए Mapbox API कनेक्ट करें',
     
     // Navigation
     'nav.home': 'होम',
@@ -159,7 +213,6 @@ const translations = {
     // Map
     'map.title': 'लाइव मैप',
     'map.subtitle': 'बसों को रीयल-टाइम में ट्रैक करें',
-    'map.myLocation': 'मेरा स्थान',
     'map.demoMode': 'डेमो मोड - पूर्ण कार्यक्षमता के लिए अपना मैपबॉक्स टोकन जोड़ें',
     
     // Nearby
@@ -167,7 +220,6 @@ const translations = {
     'nearby.subtitle': 'नजदीकी बसों का रीयल-टाइम स्थान',
     'nearby.selectedBus': 'चुनी गई बस',
     'nearby.arrivesIn': 'में आएगी',
-    'nearby.occupancy': 'भरावट',
     'nearby.trackBus': 'इस बस को ट्रैक करें',
     
     // Profile
@@ -249,8 +301,36 @@ const translations = {
   
   ur: {
     // Header
-    'app.name': 'نقل و حمل',
+    'app.name': 'گرامین یاترا',
     'header.live': 'لائیو',
+    
+    // App branding
+    'app.tagline': 'آسان پبلک ٹرانسپورٹ',
+    'app.description': 'دیہی رابطے کے لیے سمارٹ ٹرانسپورٹ حل',
+    'app.coverAlt': 'دیہی سڑکوں پر پبلک ٹرانسپورٹ بسیں',
+
+    // Splash screen
+    'splash.getStarted': 'شروع کریں',
+    'splash.voiceGuide': 'آواز گائیڈ',
+    'splash.accessibilityNote': 'آواز سپورٹ اور آسان نیویگیشن کے ساتھ دیہی رسائی کے لیے ڈیزائن کیا گیا',
+
+    // Map interface
+    'map.yourLocation': 'آپ کا مقام',
+    'map.bus': 'بس',
+    'map.eta': 'پہنچنے کا وقت',
+    'map.occupancy': 'بھراؤ',
+    'map.express': 'ایکسپریس',
+    'map.regular': 'باقاعدہ',
+    'map.distance': 'فاصلہ',
+    'map.routes': 'راستے',
+    'map.all': 'تمام',
+    'map.buses': 'بسیں',
+    'map.stops': 'اسٹاپ',
+    'map.myLocation': 'میرا مقام',
+    'map.refresh': 'ریفریش',
+    'map.full': 'بھری',
+    'map.offlineMode': 'آف لائن موڈ - کیشڈ ڈیٹا دکھا رہے ہیں',
+    'map.demoNotice': 'ڈیمو موڈ - لائیو ڈیٹا کے لیے Mapbox API کنیکٹ کریں',
     
     // Navigation
     'nav.home': 'ہوم',
@@ -278,7 +358,6 @@ const translations = {
     // Map
     'map.title': 'لائیو نقشہ',
     'map.subtitle': 'بسوں کو ریئل ٹائم میں ٹریک کریں',
-    'map.myLocation': 'میرا مقام',
     'map.demoMode': 'ڈیمو موڈ - مکمل فعالیت کے لیے اپنا میپ باکس ٹوکن شامل کریں',
     
     // Nearby
@@ -286,7 +365,6 @@ const translations = {
     'nearby.subtitle': 'قریبی بسوں کا ریئل ٹائم مقام',
     'nearby.selectedBus': 'منتخب بس',
     'nearby.arrivesIn': 'میں آئے گی',
-    'nearby.occupancy': 'بھرائی',
     'nearby.trackBus': 'اس بس کو ٹریک کریں',
     
     // Profile
