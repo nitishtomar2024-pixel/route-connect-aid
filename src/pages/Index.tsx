@@ -33,9 +33,94 @@ const Index = () => {
         return <Dashboard onOpenMap={() => setActiveTab('map')} />;
       
       case 'nearby':
-        return <NearbyMap onBusSelected={handleBusSelected} />;
+        return (
+          <div className="min-h-screen bg-background pb-20">
+            <div className="p-4">
+              <div className="mb-6">
+                <h1 className="text-2xl font-bold text-foreground mb-2">{t('nearby.title')}</h1>
+                <p className="text-muted-foreground">{t('nearby.subtitle')}</p>
+              </div>
+              <div className="h-96 mb-4 rounded-lg overflow-hidden shadow-map">
+                <NearbyMap onBusSelected={handleBusSelected} />
+              </div>
+              {selectedBus && (
+                <Card className="p-4 shadow-card">
+                  <h3 className="font-semibold mb-2 flex items-center gap-2">
+                    <Bus className="h-4 w-4 text-primary" />
+                    {t('nearby.selectedBus')}
+                  </h3>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="font-medium">{selectedBus.number}</span>
+                    <span className="text-muted-foreground">•</span>
+                    <span className="text-sm">{selectedBus.route}</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm mb-3">
+                    <span>{t('nearby.arrivesIn')} <span className="font-medium text-primary">{selectedBus.eta}</span></span>
+                    <span className={`px-2 py-1 rounded-full text-xs ${
+                      selectedBus.occupancy > 80 ? 'bg-danger/20 text-danger' :
+                      selectedBus.occupancy > 50 ? 'bg-warning/20 text-warning' :
+                      'bg-success/20 text-success'
+                    }`}>
+                      {selectedBus.occupancy}% {t('map.full')}
+                    </span>
+                  </div>
+                  <Button variant="default" className="w-full gradient-primary">
+                    <NavigationIcon className="h-4 w-4 mr-2" />
+                    {t('nearby.trackBus')}
+                  </Button>
+                </Card>
+              )}
+            </div>
+          </div>
+        );
+      case 'routes':
+        return (
+          <div className="min-h-screen bg-background pb-20">
+            <div className="p-4">
+              <div className="mb-6">
+                <h1 className="text-2xl font-bold text-foreground mb-2">{t('routes.title')}</h1>
+                <p className="text-muted-foreground">{t('routes.subtitle')}</p>
+              </div>
+              <SearchBar onSearch={handleSearch} className="mb-6" />
+              
+              <Card className="p-4 mb-4 shadow-card">
+                <h3 className="font-semibold mb-3 flex items-center gap-2">
+                  <Route className="h-4 w-4 text-primary" />
+                  {t('routes.popularRoutes')}
+                </h3>
+                <div className="space-y-2">
+                  <Button variant="ghost" className="w-full justify-start hover:bg-primary/10">
+                    <MapPin className="h-4 w-4 mr-3 text-primary" />
+                    Meerut ↔ Hapur
+                  </Button>
+                  <Button variant="ghost" className="w-full justify-start hover:bg-primary/10">
+                    <MapPin className="h-4 w-4 mr-3 text-primary" />
+                    Garh Mukteshwar ↔ Meerut
+                  </Button>
+                  <Button variant="ghost" className="w-full justify-start hover:bg-primary/10">
+                    <MapPin className="h-4 w-4 mr-3 text-primary" />
+                    Hapur ↔ Meerut Cantt
+                  </Button>
+                </div>
+              </Card>
+            </div>
+          </div>
+        );
+      
       case 'map':
-        return <TransportMap onBusSelected={handleBusSelected} />;
+        return (
+          <div className="min-h-screen bg-background pb-20">
+            <div className="p-4">
+              <div className="mb-4">
+                <h1 className="text-2xl font-bold text-foreground mb-2">{t('map.title')}</h1>
+                <p className="text-muted-foreground">{t('map.subtitle')}</p>
+              </div>
+              <div className="h-[calc(100vh-200px)] rounded-lg overflow-hidden shadow-map">
+                <TransportMap onBusSelected={handleBusSelected} />
+              </div>
+            </div>
+          </div>
+        );
       
       case 'profile':
         return <Profile />;

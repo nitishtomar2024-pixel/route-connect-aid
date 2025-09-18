@@ -314,11 +314,13 @@ const NearbyMap: React.FC<NearbyMapProps> = ({ onBusSelected }) => {
       )}
 
       {/* Demo Notice */}
-      <div className="absolute bottom-2 left-4 right-4 z-10">
-        <p className="text-xs text-muted-foreground text-center bg-card/80 rounded p-2">
-          {t('map.demoNotice')}
-        </p>
-      </div>
+      {!isOnline && (
+        <div className="absolute bottom-2 left-4 right-4 z-10">
+          <p className="text-xs text-center bg-warning/90 text-warning-foreground rounded p-2 backdrop-blur-sm">
+            {t('map.offlineMode')}
+          </p>
+        </div>
+      )}
     </div>
   );
 };

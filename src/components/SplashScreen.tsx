@@ -42,7 +42,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onGetStarted }) => {
       {/* App Branding */}
       <Card className="w-full max-w-md p-8 bg-card/95 backdrop-blur-sm border-2 shadow-card mb-6">
         <div className="text-center space-y-4">
-          <h1 className="text-4xl font-bold text-foreground gradient-primary bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
             {t('app.name')}
           </h1>
           <p className="text-xl text-muted-foreground font-medium">
@@ -60,7 +60,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onGetStarted }) => {
         <Button
           onClick={onGetStarted}
           size="lg"
-          className="w-full h-14 text-lg font-bold gradient-primary shadow-button transition-bounce hover:scale-105 touch-target"
+          className="w-full h-14 text-lg font-bold bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary shadow-button transition-all duration-300 hover:scale-105 touch-target"
         >
           <span className="flex items-center gap-3">
             🚌 {t('splash.getStarted')}
